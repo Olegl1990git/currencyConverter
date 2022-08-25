@@ -1,8 +1,8 @@
-package com.company;
+package com.company.model;
 
 import java.util.HashMap;
 
-public class CurrencyRatesModel {
+public class CurrencyRates {
     String base;
     HashMap<String, Double> rates;
 
