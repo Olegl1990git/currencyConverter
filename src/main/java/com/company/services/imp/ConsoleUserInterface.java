@@ -7,38 +7,28 @@ import java.util.Scanner;
 
 public class ConsoleUserInterface implements UserInterface {
 
-   private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     @Override
-    public String getCurrency(CurrencyRates rates) {
+    public String getString() {
         String currency;
-
-        do{
-            System.out.println("To what currency do you want to convert");
-            System.out.println(rates.getRates().keySet());
-            currency = scanner.next();
-            currency = currency.toUpperCase();
-
-        }while(!rates.getRates().containsKey(currency));
+        currency = scanner.next();
         return currency;
     }
 
     @Override
-    public double getAmount() {
-        double amount;
-        do{
-            System.out.println("How much money do you want to convert");
-            while (!scanner.hasNextDouble()){
-                System.out.println("How much money do you want to convert");
-                scanner.next();
-            }
-            amount = scanner.nextDouble();
-        } while(amount<=0);
-        return amount;
+    public double getDouble() {
+        double doubleInput;
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Input must be double");
+            scanner.next();
+        }
+        doubleInput = scanner.nextDouble();
+        return doubleInput;
     }
 
     @Override
-    public void showResult(String currency,double amount,double result) {
-        System.out.println(amount + " RUB = " + result + " " + currency);
+    public void showString(String sting) {
+        System.out.println(sting);
     }
 }
