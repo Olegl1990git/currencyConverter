@@ -4,18 +4,16 @@ import com.company.exeptions.ParsingException;
 import com.company.model.CurrencyRates;
 import com.company.services.JsonParser;
 import com.google.gson.Gson;
+import lombok.AllArgsConstructor;
 
 import java.io.FileReader;
 import java.io.IOException;
 
+@AllArgsConstructor
 public class GsonJsonParser implements JsonParser {
-
 
     private final String filename;
 
-    public GsonJsonParser(String filename) {
-        this.filename = filename;
-    }
 
     @Override
     public CurrencyRates parse() {
