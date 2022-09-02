@@ -7,24 +7,20 @@ import java.util.Scanner;
 
 public class ConsoleUserInterface implements UserInterface {
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     @Override
     public String getString() {
-        String currency;
-        currency = scanner.next();
-        return currency;
+        return scanner.next();
     }
 
     @Override
     public double getDouble() {
-        double doubleInput;
         while (!scanner.hasNextDouble()) {
             System.out.println("Input must be double");
             scanner.next();
         }
-        doubleInput = scanner.nextDouble();
-        return doubleInput;
+        return scanner.nextDouble();
     }
 
     @Override

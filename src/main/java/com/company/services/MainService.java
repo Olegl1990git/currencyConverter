@@ -22,14 +22,14 @@ public class MainService {
         currencyRates = parser.parse();
         String currency;
         do {
-            System.out.println("To what currency do you want to convert");
-            System.out.println(currencyRates.getRates().keySet());
+            userInterface.showString("To what currency do you want to convert");
+            userInterface.showString(currencyRates.getRates().keySet().toString());
             currency = userInterface.getString();
             currency = currency.toUpperCase(Locale.ROOT);
         } while (!currencyRates.getRates().containsKey(currency));
         double amount;
         do {
-            System.out.println("How much money do you want to convert");
+            userInterface.showString("How much money do you want to convert");
             amount = userInterface.getDouble();
         } while (amount <= 0);
 
