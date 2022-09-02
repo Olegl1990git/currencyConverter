@@ -2,11 +2,11 @@ package com.company.services;
 
 
 import com.company.model.CurrencyRates;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Locale;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MainService {
 
     private final JsonParser parser;
