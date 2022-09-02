@@ -1,6 +1,5 @@
 package com.company.services.imp;
 
-import com.company.model.CurrencyRates;
 import com.company.services.UserInterface;
 
 import java.util.Scanner;
